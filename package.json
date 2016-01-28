@@ -1,0 +1,34 @@
+{
+  "name": "generic-callback",
+  "version": "1.0.0",
+  "description": "Generic callback function to return NotFound on no data and parse string data as JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauriceButler/generic-callback.git"
+  },
+  "author": "Maurice Butler <maurice.butler@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MauriceButler/generic-callback/issues"
+  },
+  "homepage": "https://github.com/MauriceButler/generic-callback#readme",
+  "devDependencies": {
+    "tape": "^4.4.0"
+  },
+  "dependencies": {
+    "generic-errors": "^2.0.1"
+  },
+  "keywords": [
+    "callback",
+    "data",
+    "404",
+    "notfound",
+    "not",
+    "found",
+    "JSON"
+  ]
+}
