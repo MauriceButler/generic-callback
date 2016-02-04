@@ -36,17 +36,6 @@ test('genericCallback handles no result', function (t) {
     target();
 });
 
-test('genericCallback handles string result', function (t) {
-    t.plan(2);
-
-    var target = genericCallback(function(error, result){
-        t.notOk(error, 'no error');
-        t.deepEqual(result, expectedResult, 'correct result');
-    });
-
-    target(null, JSON.stringify(expectedResult));
-});
-
 test('genericCallback handles result', function (t) {
     t.plan(2);
 

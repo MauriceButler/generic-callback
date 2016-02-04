@@ -10,10 +10,6 @@ module.exports = function(callback){
             return callback(new errors.NotFound());
         }
 
-        if(typeof result === 'string'){
-            result = JSON.parse(result);
-        }
-
         callback(null, result);
     };
 };
