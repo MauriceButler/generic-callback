@@ -1,6 +1,6 @@
 var errors = require('generic-errors');
 
-module.exports = function(callback){
+module.exports = function(callback, modifier){
     return function(error, result){
         if(error){
             return callback(error);
@@ -10,8 +10,8 @@ module.exports = function(callback){
             return callback(new errors.NotFound());
         }
 
-        if(typeof result === 'string'){
-            result = JSON.parse(result);
+        if(modifier){
+            return callback(null, modifier(result));
         }
 
         callback(null, result);

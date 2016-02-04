@@ -36,15 +36,20 @@ test('genericCallback handles no result', function (t) {
     target();
 });
 
-test('genericCallback handles string result', function (t) {
+test('genericCallback applies modifier', function (t) {
     t.plan(2);
 
-    var target = genericCallback(function(error, result){
-        t.notOk(error, 'no error');
-        t.deepEqual(result, expectedResult, 'correct result');
-    });
+    var target = genericCallback(
+            function(error, result){
+                t.notOk(error, 'no error');
+                t.deepEqual(result, expectedResult.foo, 'correct result from modifier');
+            },
+            function(result){
+                return result.foo;
+            }
+        );
 
-    target(null, JSON.stringify(expectedResult));
+    target(null, expectedResult);
 });
 
 test('genericCallback handles result', function (t) {
