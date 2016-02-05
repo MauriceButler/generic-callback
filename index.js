@@ -6,7 +6,7 @@ module.exports = function(callback){
             return callback(error);
         }
 
-        if(!result){
+        if(result == null){
             return callback(new errors.NotFound());
         }
 
